@@ -22,7 +22,6 @@ def map_view():
     pollution = pd.read_csv('data/pollution_data.csv')
     facilities = pd.read_csv('data/facilities.csv')
 
-    # Create base map
     m = folium.Map(location=[17.3850, 78.4867], zoom_start=13)
 
     # Add pollution markers with asthma prediction
@@ -50,7 +49,6 @@ def map_view():
             fill_opacity=0.7
         ).add_to(m)
 
-    # Add existing facility markers
     for _, row in facilities.iterrows():
         icon_color = 'blue' if row['Type'] == 'EMF-Free' else 'gray'
         folium.Marker(
@@ -59,7 +57,7 @@ def map_view():
             icon=folium.Icon(color=icon_color)
         ).add_to(m)
 
-    # --- Recommended facility from Day 3 ---
+   
     recommended_lat = 16.3424
     recommended_lon = 78.8820
 
