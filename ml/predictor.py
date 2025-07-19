@@ -2,7 +2,6 @@ import pandas as pd
 from sklearn.linear_model import LinearRegression
 import pickle
 
-# Load and merge datasets
 pollution = pd.read_csv('data/pollution_data.csv')
 health = pd.read_csv('data/health_stats.csv')
 data = pd.merge(pollution, health, on='Area')
